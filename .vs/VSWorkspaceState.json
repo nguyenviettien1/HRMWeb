@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\public\\admin_assets",
+    "\\public\\admin_assets\\vendor",
+    "\\public\\admin_assets\\vendor\\bootstrap",
+    "\\public\\admin_assets\\vendor\\bootstrap\\css",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\admin"
+  ],
+  "SelectedNode": "\\public\\admin_assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
+  "PreviewInSolutionExplorer": false
+}
