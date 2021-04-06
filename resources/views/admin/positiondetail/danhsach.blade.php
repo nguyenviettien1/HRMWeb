@@ -84,7 +84,6 @@
 
 @section('script')
     <script src="../public/admin_assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../public/admin_assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../public/admin_assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <script src="../public/admin_assets/vendor/multi-select/js/jquery.multi-select.js"></script>
     <script src="../public/admin_assets/libs/js/main-js.js"></script>
