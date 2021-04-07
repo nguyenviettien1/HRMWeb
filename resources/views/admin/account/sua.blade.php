@@ -90,7 +90,7 @@
                                                     @endif
                                                     value="1">Admin</option>
                                                     <option 
-                                                    @if($account->permissionr == 0)
+                                                    @if($account->permission == 0)
                                                     {{"selected"}}
                                                     @endif
                                                     value="0">Thường</option>
