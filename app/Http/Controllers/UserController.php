@@ -36,7 +36,7 @@ class UserController extends Controller
         $account = new Account;
         $account->userID = $request->userID;
         $account->userName = $request->userName;
-        $account->password = bcrypt($request->password);
+        $account->password = md5($request->password);
         $account->permission = $request->permission;
 
         $account->save();
@@ -78,7 +78,7 @@ class UserController extends Controller
             'passwordAgain.same'=>'Password bạn nhập lại không khớp',
             
         ]);
-            $account->password=bcrypt($request->password);
+            $account->password=md5($request->password);
         }
         
         $account->save();
