@@ -36,7 +36,12 @@ class UserController extends Controller
         $account = new Account;
         $account->userID = $request->userID;
         $account->userName = $request->userName;
-        $account->password = md5($request->password);
+        if($request->permission==1){
+            $account->password = bcrypt($request->password);
+        }else{
+            $account->password = md5($request->password);
+        }
+        
         $account->permission = $request->permission;
 
         $account->save();
@@ -78,7 +83,11 @@ class UserController extends Controller
             'passwordAgain.same'=>'Password bạn nhập lại không khớp',
             
         ]);
+        if($request->permission == 1){
+            $account->password=bcrypt($request->password);
+        }else{
             $account->password=md5($request->password);
+        }
         }
         
         $account->save();
@@ -111,5 +120,10 @@ class UserController extends Controller
         }
 
         return redirect()->back()->with('thongbao', config('error.redirect_with.login'));
+    }
+
+    public function getDangXuatAdmin(){
+        Auth::logout();
+        return redirect('admin/dangnhap');
     }
 }

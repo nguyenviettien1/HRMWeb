@@ -21,9 +21,10 @@ Route::get('/', function () {
 Route::get('admin/dangnhap','App\Http\Controllers\UserController@getDangNhapAdmin');
 Route::post('admin/dangnhap','App\Http\Controllers\UserController@postDangNhapAdmin');
 // Đăng xuất admin thoát khỏi trang quản lý
-Route::get('admin/dangxuat','App\Http\Controllers\UserController@getDangXuatAdmin');
+Route::get('admin/logout','App\Http\Controllers\UserController@getDangXuatAdmin');
 
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
+
     Route::group(['prefix'=>'vitri'],function(){
         Route::get('danhsach','App\Http\Controllers\ViTriController@getDanhSach');
         
@@ -35,6 +36,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
         Route::get('xoa/{id}','App\Http\Controllers\ViTriController@getXoa');
     });
+
     Route::group(['prefix'=>'phongban'],function(){
         Route::get('danhsach','App\Http\Controllers\PhongBanController@getDanhSach');
         
@@ -47,6 +49,20 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
         Route::get('xoa/{id}','App\Http\Controllers\PhongBanController@getXoa');
         
     });
+
+    Route::group(['prefix'=>'congviec'],function(){
+        Route::get('danhsach','App\Http\Controllers\CongViecController@getDanhSach');
+        
+        Route::get('them', 'App\Http\Controllers\CongViecController@getThem');
+        Route::post('them', 'App\Http\Controllers\CongViecController@postThem');
+
+        Route::get('sua/{id}', 'App\Http\Controllers\CongViecController@getSua');
+        Route::post('sua/{id}', 'App\Http\Controllers\CongViecController@postSua');
+
+        Route::get('xoa/{id}','App\Http\Controllers\CongViecController@getXoa');
+        
+    });
+
     Route::group(['prefix'=>'nhanvien'],function(){
         Route::get('danhsach','App\Http\Controllers\NhanVienController@getDanhSach')->name('list-staff');
         Route::get('lienlac','App\Http\Controllers\NhanVienController@getLienLac');

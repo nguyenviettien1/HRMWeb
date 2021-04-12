@@ -8,13 +8,16 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Nhân sự</h2>
-                            <p class="pageheader-text">BAccount</p>
+                            <h2 class="pageheader-title">KPI Công việc</h2>
+                            <div style="width:100%;position: relative;">
+                                <a href="admin/congviec/them" class="btn btn-primary" style="right: 0 ;position: absolute;">Thêm mới</a>
+                            </div>
+                            <p class="pageheader-text">Work</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item">Nhân sự</li>
-                                        <li class="breadcrumb-item"><a href="admin/nhanvien/lienlac" class="breadcrumb-link">Trạng thái và TT liên lạc</a></li>
+                                        <li class="breadcrumb-item">Phòng ban</li>
+                                        <li class="breadcrumb-item"><a href="admin/congviec/danhsach" class="breadcrumb-link">Danh sách</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -36,31 +39,29 @@
                                     <table class="table table-striped table-bordered first">
                                         <thead>
                                             <tr>
-                                                <th style="font-weight:bold; background-color:yellow">Mã NV</th>
-                                                <th style="font-weight:bold; background-color:yellow">Tên nhân viên</th>
-                                                <th style="font-weight:bold; background-color:yellow">Email</th>
-                                                <th style="font-weight:bold; background-color:yellow">Số điện thoại</th>
-                                                <th style="font-weight:bold; background-color:yellow">Trạng thái</th>
+                                                <th style="font-weight:bold; background-color:yellow">Tháng</th>
+                                                <th style="font-weight:bold; background-color:yellow">Nhân viên</th>
+                                                <th style="font-weight:bold; background-color:yellow">Thực tế</th>
+                                                <th style="font-weight:bold; background-color:yellow">Mục tiêu tháng</th>
+                                                <th style="font-weight:bold; background-color:yellow">Tiến trình</th>
                                                 <th style="font-weight:bold; background-color:yellow">Sửa</th>
                                                 <th style="font-weight:bold; background-color:yellow">Xóa</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($nhanvien as $nv)
+                                            @foreach($congviec as $cv)
                                             <tr>
-                                                <td>{{$nv->userCD}}</td>
-                                                <td>{{$nv->name}}</td>
-                                                <td>{{$nv->email}}</td>
-                                                <td>{{$nv->phone}}</td>
+                                                <td>{{$cv->month}}</td>
+                                                <td>{{$cv->nhanvien->name}}</td>
+                                                <td>{{$cv->actual}}</td>
+                                                <td>{{$cv->target}}</td>
                                                 <td>
-                                                @if($nv->status == 1)
-                                                    {{"Hoạt động"}}
-                                                    @else
-                                                    {{"Không hoạt động"}}
-                                                @endif     
+                                                <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: {{$cv->actual*100/$cv->target}}%;" aria-valuenow="{{$cv->actual*100/$cv->target}}" aria-valuemin="0" aria-valuemax="100">{{round($cv->actual*100/$cv->target, 2)}}%</div>
+                                                </div>
                                                 </td>
-                                                <td class="center"><i class="fas fa-edit"></i><a href="admin/nhanvien/sua/{{$nv->id}}">Sửa</a></td>
-                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/nhanvien/xoa/{{$nv->id}}">Xóa</a></td>
+                                                <td class="center"><i class="fas fa-edit"></i><a href="admin/congviec/sua/{{$cv->id}}">Sửa</a></td>
+                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/congviec/xoa/{{$cv->id}}">Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -76,7 +77,6 @@
             </div>
         </div>
 @endsection
-
 @section('css')
     <link rel="stylesheet" href="../public/admin_assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/admin_assets/libs/css/style.css">

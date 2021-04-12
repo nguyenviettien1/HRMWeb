@@ -97,9 +97,13 @@
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-newspaper"></i>Bảo hiểm</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-newspaper"></i>Công việc</a>
                                 <div id="submenu-9" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="admin/congviec/danhsach"><i class="fas fa-user-md"></i>Quản lý công việc</a>
+                                        </li>
+                                       
                                         <li class="nav-item">
                                             <a class="nav-link" href="admin/nhanvien/baohiem"><i class="fas fa-user-md"></i>Người tham gia bảo hiểm</a>
                                         </li>

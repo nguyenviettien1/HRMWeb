@@ -30,9 +30,7 @@
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- login page  -->
-    <!-- ============================================================== -->
+    
     <div class="splash-container">
         <div class="card ">
             <div class="card-header text-center"><a href="#"><img class="logo-img" src="../public/admin_assets/images/apatek.png" alt="logo"></a><span class="splash-description">Hãy nhập tài khoản của bạn</span></div>
@@ -66,10 +64,7 @@
         </div>
     </div>
   
-    <!-- ============================================================== -->
-    <!-- end login page  -->
-    <!-- ============================================================== -->
-    <!-- Optional JavaScript -->
+    
     <script src="../public/admin_assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <script src="../public/admin_assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
