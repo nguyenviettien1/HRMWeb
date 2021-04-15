@@ -10,6 +10,7 @@ use App\Models\BAccount;
 use App\Models\DepartmentDetail;
 use App\Models\PositionDetail;
 use App\Models\Account;
+use Illuminate\Support\Facades\DB;
 class TongQuanController extends Controller
 {
     public function getNhanSu(){
@@ -18,7 +19,15 @@ class TongQuanController extends Controller
         $account = Account::all();
         $phongban = DepartmentDetail::all();
         $vitri = PositionDetail::all();
-        return view('admin.dashboard.nhansu',['nhanvien'=>$nhanvien,'nhanvien1'=>$nhanvien1,'account'=>$account,'phongban'=>$phongban,'vitri'=>$vitri]);
+        $nhanvien2 = DB::table('baccount')
+        ->leftJoin('account', 'baccount.id', '=', 'account.userID')
+        ->join('positiondetail','baccount.positionID','=','positiondetail.id')
+        ->join('departmentdetail','baccount.departmentID','=','departmentdetail.id')
+        ->where('account.id', '=', null)
+        ->get();
+        return view('admin.dashboard.nhansu',
+        ['nhanvien'=>$nhanvien,'nhanvien1'=>$nhanvien1,'nhanvien2'=>$nhanvien2,
+        'account'=>$account,'phongban'=>$phongban,'vitri'=>$vitri]);
     }
     
 }

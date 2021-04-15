@@ -63,7 +63,7 @@
                                                 @endif     
                                                 </td>
                                                 <td class="center"><i class="fas fa-edit"></i><a href="admin/user/sua/{{$ac->id}}">Sửa</a></td>
-                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/user/xoa/{{$ac->id}}">Xóa</a></td>
+                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/user/xoa/{{$ac->id}}" onclick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

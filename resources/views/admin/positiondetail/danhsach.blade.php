@@ -53,7 +53,7 @@
                                                 <td>{{$vt->description}}</td>
                                                 <td>{{$vt->coefficientSalary}}</td>
                                                 <td class="center"><i class="fas fa-edit"></i><a href="admin/vitri/sua/{{$vt->id}}">Sửa</a></td>
-                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/vitri/xoa/{{$vt->id}}">Xóa</a></td>
+                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/vitri/xoa/{{$vt->id}}" onclick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

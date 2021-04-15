@@ -49,7 +49,7 @@
                                             Nội dung: {{$tb->content}}
                                         </td>
                                         <td class="center"><i class="fas fa-edit"></i><a href="admin/thongbao/sua/{{$tb->id}}">Sửa</a></td>
-                                        <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/thongbao/xoa/{{$tb->id}}">Xóa</a></td>
+                                        <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/thongbao/xoa/{{$tb->id}}" onclick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
                                     <tr>
                                     @endforeach
                                 </tbody>

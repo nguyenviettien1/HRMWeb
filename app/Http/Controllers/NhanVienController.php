@@ -15,7 +15,7 @@ class NhanVienController extends Controller
     }
 
     public function getLienLac(){
-        $nhanvien = BAccount::where('status',1)->get();
+        $nhanvien = BAccount::all();
         return view('admin.baccount.lienlac',['nhanvien'=>$nhanvien]);
  
     }

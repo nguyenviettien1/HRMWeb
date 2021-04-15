@@ -16,7 +16,7 @@ class UserController extends Controller
     }
 
     public function getThem(){
-        $nhanvien = BAccount::where('status',1)->get();
+        $nhanvien = BAccount::all();
         return view('admin.account.them',['nhanvien'=>$nhanvien]);
     }
 
@@ -51,7 +51,7 @@ class UserController extends Controller
 
     public function getSua($id){
         $account=Account::find($id);
-        $nhanvien = BAccount::where('status',1)->get();
+        $nhanvien = BAccount::all();
         return view('admin.account.sua',['account'=>$account,'nhanvien'=>$nhanvien]);
     }
 

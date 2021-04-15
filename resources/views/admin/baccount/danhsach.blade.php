@@ -71,7 +71,7 @@
                                                 <td>{{$nv->vitri->description}}</td>
                                                 <td>{{$nv->phongban->description}}</td>
                                                 <td class="center"><i class="fas fa-edit"></i><a href="admin/nhanvien/sua/{{$nv->id}}">Sửa</a></td>
-                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/nhanvien/xoa/{{$nv->id}}">Xóa</a></td>
+                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/nhanvien/xoa/{{$nv->id}}" onclick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

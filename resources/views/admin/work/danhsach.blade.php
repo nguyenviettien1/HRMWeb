@@ -61,7 +61,7 @@
                                                 </div>
                                                 </td>
                                                 <td class="center"><i class="fas fa-edit"></i><a href="admin/congviec/sua/{{$cv->id}}">Sửa</a></td>
-                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/congviec/xoa/{{$cv->id}}">Xóa</a></td>
+                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/congviec/xoa/{{$cv->id}}" onclick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

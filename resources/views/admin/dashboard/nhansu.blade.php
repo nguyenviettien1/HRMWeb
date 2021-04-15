@@ -141,7 +141,55 @@
                     
                 </div>
 
-                
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                        <h3 class="card-header">Danh sách nhân sự chưa có tài khoản</h3>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered first">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-weight:bold; background-color:yellow">Mã NV</th>
+                                                <th style="font-weight:bold; background-color:yellow">Tên nhân viên</th>
+                                                <th style="font-weight:bold; background-color:yellow">Tuổi</th>
+                                                <th style="font-weight:bold; background-color:yellow">Giới tính</th>
+                                                <th style="font-weight:bold; background-color:yellow">Avatar</th>
+                                                <th style="font-weight:bold; background-color:yellow">Địa chỉ</th>
+                                                <th style="font-weight:bold; background-color:yellow">Email</th>
+                                                <th style="font-weight:bold; background-color:yellow">Số điện thoại</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($nhanvien2 as $nv)
+                                            <tr>
+                                                <td>{{$nv->userCD}}</td>
+                                                <td>{{$nv->name}}</td>
+                                                <td>{{$nv->age}}</td>
+                                                <td>
+                                                @if($nv->gender == 0)
+                                                    {{"Nữ"}}
+                                                    @else
+                                                    {{"Nam"}}
+                                                @endif     
+                                                </td>
+                                                <td>
+                                                <img width="100px" src="upload/nhansu/{{$nv->avatar}}" />
+                                                </td>
+                                                <td>{{$nv->address}}</td>
+                                                <td>{{$nv->email}}</td>
+                                                <td>{{$nv->phone}}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
 @endsection

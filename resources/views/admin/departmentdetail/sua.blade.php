@@ -48,7 +48,7 @@
                                         
                                         <div class="form-group row text-right">
                                             <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-space btn-primary" onclick="return confirm('Bạn có chắc chắn không?')">Submit</button>
                                                 <button type="reset" class="btn btn-space btn-secondary">Cancel</button>
                                             </div>
                                         </div>

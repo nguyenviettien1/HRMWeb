@@ -51,7 +51,7 @@
                                                 <td>{{$pb->id}}</td>
                                                 <td>{{$pb->description}}</td>
                                                 <td class="center"><i class="fas fa-edit"></i><a href="admin/phongban/sua/{{$pb->id}}">Sửa</a></td>
-                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/phongban/xoa/{{$pb->id}}">Xóa</a></td>
+                                                <td class="center"><i class="fas fa-trash-alt"></i><a href="admin/phongban/xoa/{{$pb->id}}" onclick="return confirm('Bạn có chắc chắn không?')">Xóa</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
