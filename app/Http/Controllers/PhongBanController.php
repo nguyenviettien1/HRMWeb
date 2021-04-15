@@ -25,6 +25,7 @@ class PhongBanController extends Controller
         ]);
         $phongban = new DepartmentDetail;
         $phongban->description = $request->description;
+        $phongban->total = 0;
         $phongban->save();
 
         return redirect('admin/phongban/danhsach')->with('thongbao', 'Thêm thành công phòng ban');

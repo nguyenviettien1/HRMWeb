@@ -74,6 +74,16 @@ class NhanVienController extends Controller
        }
        $nhanvien->save();
 
+       $phongban = DepartmentDetail::find($nhanvien->departmentID);
+       $x = $phongban->total;
+       $phongban->total = $x+1;
+       $phongban->save();
+
+       $vitri = PositionDetail::find($nhanvien->positionID);
+       $x = $vitri->total;
+       $vitri->total = $x+1;
+       $vitri->save();
+
        return redirect('admin/nhanvien/danhsach')->with('thongbao', 'Thêm thành công nhân sự');
     }
 

@@ -64,7 +64,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
     });
 
     Route::group(['prefix'=>'nhanvien'],function(){
-        Route::get('danhsach','App\Http\Controllers\NhanVienController@getDanhSach')->name('list-staff');
+        Route::get('danhsach','App\Http\Controllers\NhanVienController@getDanhSach');
         Route::get('lienlac','App\Http\Controllers\NhanVienController@getLienLac');
         Route::get('baohiem','App\Http\Controllers\NhanVienController@getBaoHiem');
         
@@ -108,6 +108,10 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
         Route::get('gioithieu','App\Http\Controllers\InforController@getGioiThieu');
         Route::get('lienhe','App\Http\Controllers\InforController@getLienHe');
         Route::get('diachi','App\Http\Controllers\InforController@getDiaChi');
+    });
+
+    Route::group(['prefix'=>'tongquan'],function(){
+        Route::get('nhansu','App\Http\Controllers\TongQuanController@getNhanSu')->name('dashboard-list');
     });
     
 });

@@ -14,7 +14,7 @@
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../dashboard-finance.html">Nhân sự</a>
+                                            <a class="nav-link" href="admin/tongquan/nhansu">Nhân sự</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="../dashboard-sales.html">Lương</a>

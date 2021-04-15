@@ -25,6 +25,7 @@ class ViTriController extends Controller
         ]);
         $vitri = new PositionDetail;
         $vitri->description = $request->description;
+        $vitri->total = 0;
         $vitri->coefficientSalary = $request->coefficientSalary;
         $vitri->save();
 

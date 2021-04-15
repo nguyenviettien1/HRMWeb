@@ -116,7 +116,7 @@ class UserController extends Controller
         ];
 
         if(Auth::attempt($arrLogin)) {
-            return redirect()->route('list-staff');
+            return redirect()->route('dashboard-list');
         }
 
         return redirect()->back()->with('thongbao', config('error.redirect_with.login'));
