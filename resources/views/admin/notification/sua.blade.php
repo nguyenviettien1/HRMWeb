@@ -44,7 +44,7 @@
                                             <div class="col-12 col-sm-8 col-lg-6">
                                             <img width="100px" src="upload/notification/{{$thongbao->image}}"/>
                                             <br>
-                                                <input type="file" required="" name="image" accept=".jpg, .jpeg, .png" class="form-control">
+                                                <input type="file" name="image" accept=".jpg, .jpeg, .png" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group row">

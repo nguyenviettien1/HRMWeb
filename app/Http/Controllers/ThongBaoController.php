@@ -40,6 +40,7 @@ class ThongBaoController extends Controller
             $file->move("upload/notification",$Hinh);
             $thongbao->image = $Hinh;
         }
+        $thongbao->imageMobile = base64_encode(file_get_contents("upload/notification/".$Hinh));
         $thongbao->save();
         return redirect('admin/thongbao/danhsach')->with('thongbao', 'Thêm thành công thông báo');
     }
@@ -67,6 +68,7 @@ class ThongBaoController extends Controller
         unlink("upload/notification/".$thongbao->image);
         $thongbao->image = $Hinh;
         }
+        $thongbao->imageMobile = base64_encode(file_get_contents("upload/notification/".$Hinh));
        $thongbao->save();
 
         return redirect('admin/thongbao/sua/'.$id)->with('thongbao', 'Sửa thành công thông báo');

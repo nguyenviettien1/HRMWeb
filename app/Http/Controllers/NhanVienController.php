@@ -71,6 +71,7 @@ class NhanVienController extends Controller
            };
            $file->move("upload/nhansu",$Hinh);
            $nhanvien->avatar = $Hinh;
+           $nhanvien->avatarMobile = base64_encode(file_get_contents("upload/nhansu/".$Hinh));
        }
        $nhanvien->save();
 
@@ -113,6 +114,7 @@ class NhanVienController extends Controller
        $nhanvien->status = $request->status ;
        $nhanvien->insurance = $request->insurance ;
        $nhanvien->dayToWork = $request->dayToWork ;
+
        if($request->hasFile('avatar')){
         $file = $request->file('avatar');
         $name = $file->getClientOriginalName();
@@ -125,9 +127,10 @@ class NhanVienController extends Controller
         unlink("upload/nhansu/".$nhanvien->avatar);
         $nhanvien->avatar = $Hinh;
         }
+        $nhanvien->avatarMobile = base64_encode(file_get_contents("upload/nhansu/".$Hinh));
        $nhanvien->save();
 
-        return redirect('admin/nhanvien/sua/'.$id)->with('thongbao', 'Sửa thành công nhân sự');
+        return redirect('admin/nhanvien/danhsach')->with('thongbao', 'Sửa thành công nhân sự');
     }
 
     public function getXoa($id){
