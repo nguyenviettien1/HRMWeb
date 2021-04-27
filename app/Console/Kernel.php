@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\SalaryOfTheMonth::class,
+        Commands\SalaryOfTest::class,
     ];
 
     /**
@@ -24,7 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('salary:month')
+        ->monthlyOn(4,'8:00');
+        $schedule->command('salary:test')
+        ->everyMinute();
     }
 
     /**

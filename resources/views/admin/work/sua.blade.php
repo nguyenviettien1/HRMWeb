@@ -42,7 +42,7 @@
                                     <div class="form-group row">
                                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Tháng<span style="color:red">*</span></label>
                                             <div class="col-12 col-sm-8 col-lg-6">
-                                                <input type="text" required="" name="month" placeholder="Nhập tháng" class="form-control" value="{{$congviec->month}}">
+                                                <input type="date" required="" name="month" placeholder="Nhập tháng" class="form-control" value="{{$congviec->month}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">

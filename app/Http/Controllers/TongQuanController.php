@@ -10,6 +10,7 @@ use App\Models\BAccount;
 use App\Models\DepartmentDetail;
 use App\Models\PositionDetail;
 use App\Models\Account;
+use App\Models\Salary;
 use Illuminate\Support\Facades\DB;
 class TongQuanController extends Controller
 {
@@ -28,6 +29,23 @@ class TongQuanController extends Controller
         return view('admin.dashboard.nhansu',
         ['nhanvien'=>$nhanvien,'nhanvien1'=>$nhanvien1,'nhanvien2'=>$nhanvien2,
         'account'=>$account,'phongban'=>$phongban,'vitri'=>$vitri]);
+    }
+
+    public function getLuong(){
+        $nhanvien = BAccount::where('status',1)->get();
+        $nhanvien1 = BAccount::where('insurance',1)->where('status',1)->get();
+        $total = 0;
+        $luong = Salary::where('month', date('Y-m-d',strtotime('-24 day',strtotime(date('Y-m-d')))))->get();
+        foreach($luong as $l){
+            $total = $total + $l->total;
+        }
+        $account = Account::all();
+        $phongban = DepartmentDetail::all();
+        $vitri = PositionDetail::all();
+        
+        return view('admin.dashboard.luong',
+        ['nhanvien'=>$nhanvien,'nhanvien1'=>$nhanvien1,
+        'account'=>$account,'phongban'=>$phongban,'vitri'=>$vitri,'total'=>$total]);
     }
     
 }

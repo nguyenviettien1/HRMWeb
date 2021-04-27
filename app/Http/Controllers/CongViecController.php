@@ -24,6 +24,7 @@ class CongViecController extends Controller
         $work->month = $request->month;
         $work->actual = $request->actual;
         $work->target = $request->target;
+        $work->progress = $request->actual/$request->target;
         $work->save();
         return redirect('admin/congviec/danhsach')->with('thongbao', 'Thêm thành công KPI tháng');
         
@@ -42,8 +43,9 @@ class CongViecController extends Controller
         $work->month = $request->month;
         $work->actual = $request->actual;
         $work->target = $request->target;
+        $work->progress = $request->actual/$request->target;
         $work->save();
-        return redirect('admin/congviec/sua/'.$id)->with('thongbao', 'Sửa thành công KPI công việc');
+        return redirect('admin/congviec/danhsach')->with('thongbao', 'Sửa thành công KPI công việc');
        
     }
 
@@ -51,5 +53,25 @@ class CongViecController extends Controller
         $work=Work::find($id);
         $work->delete();
         return redirect('admin/congviec/danhsach')->with('thongbao', 'Xóa thành công KPI công việc');
+    }
+
+    public function getThemTuDong(){
+        $nhanvien = BAccount::where('status',1)->get();
+        $userId = array();
+        foreach($nhanvien as $nv){
+            array_push($userId, $nv->id);
+        };
+
+        foreach($userId as $u){
+            $congviec = new Work;
+            $congviec->userID = $u;
+            $congviec->month = date('Y-m-d',strtotime('+6 day',strtotime(date('Y-m-d'))));
+            $congviec->actual = 1;
+            $congviec->target = 2;
+            $congviec->progress = 0.5;
+            $congviec->save();
+        }
+        
+        return view('admin.work.themtudong');
     }
 }

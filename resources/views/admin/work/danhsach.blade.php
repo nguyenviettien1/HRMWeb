@@ -10,13 +10,16 @@
                         <div class="page-header">
                             <h2 class="pageheader-title">KPI Công việc</h2>
                             <div style="width:100%;position: relative;">
+                                <a href="admin/congviec/themtudong" class="btn btn-success" >Thêm tự động</a>
                                 <a href="admin/congviec/them" class="btn btn-primary" style="right: 0 ;position: absolute;">Thêm mới</a>
                             </div>
+                            
                             <p class="pageheader-text">Work</p>
                             <div class="page-breadcrumb">
+                            
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item">Phòng ban</li>
+                                        <li class="breadcrumb-item">Công việc</li>
                                         <li class="breadcrumb-item"><a href="admin/congviec/danhsach" class="breadcrumb-link">Danh sách</a></li>
                                     </ol>
                                 </nav>
@@ -51,7 +54,12 @@
                                         <tbody>
                                             @foreach($congviec as $cv)
                                             <tr>
-                                                <td>{{$cv->month}}</td>
+                                                <td>
+                                                <?php
+                                                $date=date_create($cv->month);
+                                                echo date_format($date,"m-Y");
+                                                ?>
+                                                </td>
                                                 <td>{{$cv->nhanvien->name}}</td>
                                                 <td>{{$cv->actual}}</td>
                                                 <td>{{$cv->target}}</td>

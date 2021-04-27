@@ -52,6 +52,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
     Route::group(['prefix'=>'congviec'],function(){
         Route::get('danhsach','App\Http\Controllers\CongViecController@getDanhSach');
+        Route::get('themtudong','App\Http\Controllers\CongViecController@getThemTuDong');
         
         Route::get('them', 'App\Http\Controllers\CongViecController@getThem');
         Route::post('them', 'App\Http\Controllers\CongViecController@postThem');
@@ -104,6 +105,12 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
         
     });
 
+    Route::group(['prefix'=>'luong'],function(){
+        Route::get('danhsach','App\Http\Controllers\LuongController@getDanhSach');
+        Route::get('congthuc','App\Http\Controllers\LuongController@getCongThuc');
+        Route::get('tinhluong','App\Http\Controllers\LuongController@getTinhLuong');
+    });
+
     Route::group(['prefix'=>'information'],function(){
         Route::get('gioithieu','App\Http\Controllers\InforController@getGioiThieu');
         Route::get('lienhe','App\Http\Controllers\InforController@getLienHe');
@@ -112,6 +119,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
     Route::group(['prefix'=>'tongquan'],function(){
         Route::get('nhansu','App\Http\Controllers\TongQuanController@getNhanSu')->name('dashboard-list');
+        Route::get('luong','App\Http\Controllers\TongQuanController@getLuong');
     });
     
 });

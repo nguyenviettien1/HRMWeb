@@ -17,7 +17,7 @@
                                             <a class="nav-link" href="admin/tongquan/nhansu">Nhân sự</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../dashboard-sales.html">Lương</a>
+                                            <a class="nav-link" href="admin/tongquan/luong">Lương</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -59,10 +59,10 @@
                                 <div id="submenu-8" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="icon-fontawesome.html">FontAwesome Icons</a>
+                                            <a class="nav-link" href="admin/luong/danhsach">Danh sách lương</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="icon-material.html">Material Icons</a>
+                                            <a class="nav-link" href="admin/luong/congthuc">Công thức tính lương</a>
                                         </li>
                                         
                                     </ul>
