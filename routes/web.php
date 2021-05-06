@@ -111,6 +111,13 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
         Route::get('tinhluong','App\Http\Controllers\LuongController@getTinhLuong');
     });
 
+    Route::group(['prefix'=>'chamcong'],function(){
+        Route::get('danhsach','App\Http\Controllers\ChamCongController@getDanhSach');
+        Route::get('test','App\Http\Controllers\ChamCongController@getTest');
+        Route::get('tonghop','App\Http\Controllers\ChamCongController@getTongHop');
+        Route::get('tudong','App\Http\Controllers\ChamCongController@getTuDong');
+    });
+
     Route::group(['prefix'=>'information'],function(){
         Route::get('gioithieu','App\Http\Controllers\InforController@getGioiThieu');
         Route::get('lienhe','App\Http\Controllers\InforController@getLienHe');

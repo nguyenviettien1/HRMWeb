@@ -10,14 +10,14 @@
                         <div class="page-header">
                             <h2 class="pageheader-title">Chấm công</h2>
                             <div style="width:100%;position: relative;">
-                                <a href="admin/chamcong/test" class="btn btn-primary" style="right: 0 ;position: absolute;">Fake CheckIn</a>
+                                <a href="admin/chamcong/tudong" class="btn btn-primary" style="right: 0 ;position: absolute;">Tổng hợp tự động</a>
                             </div>
                             <p class="pageheader-text">CheckIn</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">Chấm công</li>
-                                        <li class="breadcrumb-item"><a href="admin/chamcong/danhsach" class="breadcrumb-link">Danh sách</a></li>
+                                        <li class="breadcrumb-item"><a href="admin/chamcong/tonghop" class="breadcrumb-link">Tổng hợp chấm công theo tháng</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -41,57 +41,25 @@
                                             <tr>
                                                 <th style="font-weight:bold; background-color:yellow">Tháng</th>
                                                 <th style="font-weight:bold; background-color:yellow">Nhân viên</th>
-                                                <th style="font-weight:bold; background-color:yellow">Ngày</th>
-                                                <th style="font-weight:bold; background-color:yellow">Thứ</th>
-                                                <th style="font-weight:bold; background-color:yellow">Giờ checkIn</th>
-                                                <th style="font-weight:bold; background-color:yellow">Giờ checkOut</th>
-                                                <th style="font-weight:bold; background-color:yellow">Tổng TG làm</th>
+                                                <th style="font-weight:bold; background-color:yellow">Số ngày công</th>
+                                                <th style="font-weight:bold; background-color:yellow">Số lần OverTime</th>
+                                                <th style="font-weight:bold; background-color:yellow">Số lần đi làm muộn</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         
-                                            @foreach($chamcong as $cc)
+                                            @foreach($tonghopCC as $th)
                                             <tr>
-                                            
                                                 <td>
                                                 <?php
-                                                $date=date_create($cc->month);
+                                                $date=date_create($th->month);
                                                 echo date_format($date,"m-Y");
                                                 ?>
                                                 </td>
-                                                <td>{{$cc->nhanvien->name}}</td>
-                                                <td>{{$cc->day}}</td>
-                                                <td>
-                                                <?php
-                                                $timestamp = strtotime($cc->day); 
-                                                $date = getdate($timestamp);
-                                                echo $date['weekday'];
-                                                ?>
-                                                </td>
-                                                <td>
-                                                <?php
-                                                $checkIn =date("h:i:s",$cc->checkInAt) ; 
-                                                echo $checkIn;
-                                                ?>
-                                                </td>
-                                                <td>
-                                                <?php
-                                                $checkIn =date("G:i:s",$cc->checkOutAt) ; 
-                                                echo $checkIn;
-                                                ?>
-                                                </td>
-                                                <td>
-                                                <?php
-                                                $diff = $cc->workTime; 
-                                                $hours = floor($diff/3600);   
-                                                $minutes =floor(($diff - $hours*3600)/60);   
-                                                $seconds = $diff - $hours*3600 - $minutes*60;
-                                                echo 
-                                                $hours." giờ ". $minutes." phút ". $seconds." giây";
-
-                                                ?>
-                                                </td>
-                                                
+                                                <td>{{$th->nhanvien->name}}</td>
+                                                <td>{{$th->workDayNbr/2}}</td>
+                                                <td>{{$th->overTimeNbr}}</td>
+                                                <td>{{$th->lateNbr}}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -101,9 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
 @endsection

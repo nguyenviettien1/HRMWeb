@@ -6,7 +6,6 @@ use App\Models\BAccount;
 use App\Models\PositionDetail;
 use App\Models\DepartmentDetail;
 use App\Models\CheckIn;
-use App\Models\Mistake;
 use App\Models\Salary;
 use Illuminate\Console\Command;
 

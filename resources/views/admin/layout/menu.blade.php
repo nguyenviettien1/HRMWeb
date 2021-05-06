@@ -46,10 +46,10 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="chart-c3.html">C3 Charts</a>
+                                            <a class="nav-link" href="admin/chamcong/danhsach">Danh sách chấm công</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="chart-chartist.html">Chartist Charts</a>
+                                            <a class="nav-link" href="admin/chamcong/tonghop">Tổng hợp chấm công theo tháng</a>
                                         </li>
                                     </ul>
                                 </div>

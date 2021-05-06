@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OverTime extends Model
+class Timekeeping extends Model
 {
-    protected $table = "overtime";
+    protected $table = "timekeeping";
     public function nhanvien(){
         return $this->belongsTo('App\Models\BAccount','userID','id');
     }

@@ -35,7 +35,8 @@ class TongQuanController extends Controller
         $nhanvien = BAccount::where('status',1)->get();
         $nhanvien1 = BAccount::where('insurance',1)->where('status',1)->get();
         $total = 0;
-        $luong = Salary::where('month', date('Y-m-d',strtotime('-24 day',strtotime(date('Y-m-d')))))->get();
+        $today = date("d");
+        $luong = Salary::where('month', date('Y-m-d',strtotime('-'.$today.' day',strtotime(date('Y-m-d')))))->get();
         foreach($luong as $l){
             $total = $total + $l->total;
         }

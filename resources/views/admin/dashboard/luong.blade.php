@@ -37,7 +37,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="text-muted">Tổng tiền tháng trước</h5>
+                                <h5 class="text-muted">Tổng tiền lương phải trả tháng trước</h5>
                                 <div class="metric-value d-inline-block">
                                     <h1 class="mb-1 text-primary">
                                                 <?php

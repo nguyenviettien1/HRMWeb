@@ -6,7 +6,6 @@ use App\Models\BAccount;
 use App\Models\PositionDetail;
 use App\Models\DepartmentDetail;
 use App\Models\CheckIn;
-use App\Models\Mistake;
 use Illuminate\Console\Command;
 
 class SalaryOfTheMonth extends Command
