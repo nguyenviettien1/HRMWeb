@@ -63,7 +63,7 @@
                                             <div class="col-12 col-sm-8 col-lg-6">
                                             <img width="100px" src="upload/nhansu/{{$nhanvien->avatar}}"/>
                                             <br>
-                                            <input type="file" name="avatar" accept=".jpg, .jpeg, .png" class="form-control" style="margin-top:4px">
+                                            <input type="file" name="avatar" accept=".jpg, .jpeg, .png" class="form-control" style="margin-top:4px" value="{{$nhanvien->avatar}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">

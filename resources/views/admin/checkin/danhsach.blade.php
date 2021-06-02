@@ -70,7 +70,7 @@
                                                 </td>
                                                 <td>
                                                 <?php
-                                                $checkIn =date("h:i:s",$cc->checkInAt) ; 
+                                                $checkIn =date("G:i:s",$cc->checkInAt) ; 
                                                 echo $checkIn;
                                                 ?>
                                                 </td>
